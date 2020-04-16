@@ -20,7 +20,7 @@ public class DbUtils {
 	 * Method will establish connection with Database
 	 */
 	public static void createConnection() {
-		
+		ConfigsReader.readProperties(Constants.CREDENTIALS_FILEPATH);
 		try {
 			conn = DriverManager.getConnection(ConfigsReader.getProperty("dbUrl"),
 					ConfigsReader.getProperty("dbUsername"),ConfigsReader.getProperty("dbPassword"));
